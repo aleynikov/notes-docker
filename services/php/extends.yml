@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  php:
+    container_name: notes-php
+    build: .
+    volumes:
+      - ../../app/notes-back:/app
+    

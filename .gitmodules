@@ -1,0 +1,6 @@
+[submodule "app/notes-back"]
+	path = app/notes-back
+	url = https://github.com/aleynikov/notes-app-back.git
+[submodule "app/notes-front"]
+	path = app/notes-front
+	url = https://github.com/aleynikov/notes-app-front.git

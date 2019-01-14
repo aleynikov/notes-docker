@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  php:
+    extends:
+      file: ./services/php/extends.yml
+      service: php
+
+  mysql:
+    extends:
+      file: ./services/mysql/extends.yml
+      service: mysql
+
+  web:
+    extends:
+      file: ./services/nginx/extends.yml
+      service: nginx
+    depends_on:
+      - php
+      - mysql

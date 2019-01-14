@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  nginx:
+    container_name: notes-nginx
+    build: .
+    volumes:
+      - ../../app/notes-front/dist/notes-front:/var/www/html
+      # - ../../app/notes-back:/app
+    ports:
+      - 80:80
