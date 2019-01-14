@@ -12,10 +12,10 @@ front-init:
 
 back-env:
 	cd app/notes-back && cp .env.example .env \
-		&& sed -i 's/DB_HOST=127.0.0.1/DB_HOST=mysql/g' .env \
-		&& sed -i 's/DB_DATABASE=homestead/DB_DATABASE=notes/g' .env \
-		&& sed -i 's/DB_USERNAME=homestead/DB_USERNAME=root/g' .env \
-		&& sed -i 's/DB_PASSWORD=secret/DB_PASSWORD=notes/g' .env
+		&& sed -ie 's/DB_HOST=127.0.0.1/DB_HOST=mysql/g' .env \
+		&& sed -ie 's/DB_DATABASE=homestead/DB_DATABASE=notes/g' .env \
+		&& sed -ie 's/DB_USERNAME=homestead/DB_USERNAME=root/g' .env \
+		&& sed -ie 's/DB_PASSWORD=secret/DB_PASSWORD=notes/g' .env
 
 back-init: mysql-init back-env docker-up
 	docker exec -it notes-php sh -c "composer update && php artisan migrate"
